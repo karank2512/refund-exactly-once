@@ -1,0 +1,40 @@
+{
+  "name": "refund-exactly-once",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exactly-once money movement for agent tool calls: a refund tool against a fake provider, naive execution vs hardened, on Postgres semantics (PGlite).",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run typecheck && tsx --test test/*.test.ts",
+    "demo": "tsx src/demo.ts",
+    "report": "tsx src/report.ts && prettier --write REPORT.md",
+    "check": "npm run lint && npm run format:check && npm test"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.2.17",
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.39.5",
+    "prettier": "^3.10.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.72.2"
+  },
+  "author": "Karan Kapur",
+  "keywords": [
+    "fault-injection",
+    "idempotency",
+    "exactly-once",
+    "agents",
+    "postgres",
+    "reliability",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
